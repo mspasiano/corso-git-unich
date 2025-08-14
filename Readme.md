@@ -17,6 +17,110 @@
 
 #### **1.2 Cenni Storici e Motivazioni (25 min)**
 - **Storia**: Linus Torvalds e la nascita di GIT (2005)
+I motivi che hanno spinto Linus Torvalds a creare Git nel 2005 sono stati principalmente legati alla crisi del sistema di controllo versione che il kernel Linux stava utilizzando:
+
+## **Il Problema con BitKeeper (2005)**
+
+**BitKeeper Crisis**: Fino al 2005, il progetto del kernel Linux utilizzava BitKeeper, un sistema di controllo versione distribuito proprietario. La società BitMover aveva concesso una licenza gratuita per progetti open source, ma nell'aprile 2005 **revocò questa licenza gratuita** dopo dispute riguardanti il reverse engineering del protocollo da parte di alcuni sviluppatori della community Linux.
+
+## **Le Frustrazioni di Linus**
+
+### **1. Sistemi Esistenti Inadeguati**
+- **CVS**: Troppo lento e centralizzato, non gestiva bene i merge
+- **Subversion**: Ancora centralizzato, non abbastanza veloce per un progetto delle dimensioni del kernel Linux
+- **Altri sistemi distribuiti**: Non esistevano o erano troppo complessi/lenti
+
+### **2. Requisiti Specifici del Kernel Linux**
+- **Scale massive**: Migliaia di sviluppatori, milioni di righe di codice
+- **Merge frequenti**: Centinaia di patch al giorno da integrare
+- **Velocità**: Operazioni che dovevano completarsi in secondi, non minuti
+- **Integrità**: Garanzia assoluta che i dati non fossero corrotti
+- **Workflow distribuito**: Sviluppatori in tutto il mondo senza server centrale
+
+## **La "Crisi" del Weekend**
+
+**Timeline critica**:
+- **3 aprile 2005**: BitMover annuncia la fine della licenza gratuita
+- **6-7 aprile 2005**: Linus inizia a sviluppare Git
+- **7 aprile 2005**: Primo commit di Git
+- **16 aprile 2005**: Git si auto-ospita (Git gestisce il proprio codice sorgente)
+- **26 luglio 2005**: Primo kernel Linux gestito con Git
+
+## **Filosofia di Design di Git**
+
+Linus aveva requisiti molto specifici:
+
+### **Performance**
+> "Git is designed to be very fast. All operations should complete in a few seconds at most"
+
+### **Integrità dei Dati**
+- Ogni oggetto è identificato dal suo hash SHA-1
+- Impossibile corrompere file senza accorgersene
+- Verifica automatica dell'integrità
+
+### **Semplicità Concettuale**
+- Poche operazioni primitive ma potenti
+- Modello di dati semplice (blob, tree, commit, tag)
+
+### **Supporto per Workflow Non-lineari**
+- Branch rapidi e economici
+- Merge intelligente e automatico
+- Supporto per migliaia di branch paralleli
+
+## **Le Critiche ai Sistemi Esistenti**
+
+Linus era particolarmente critico verso:
+
+### **CVS/Subversion**:
+- "CVS è l'esempio di cosa NON fare"
+- Troppo lento per operazioni su larga scala
+- Merge problematici
+- Modello centralizzato inadeguato
+
+### **Altri DVCS dell'epoca**:
+- **Monotone**: Troppo lento, design over-engineered
+- **Darcs**: Problemi di performance con repository grandi
+- **Bazaar**: Non esisteva ancora in forma utilizzabile
+
+## **Il Fattore Personalità**
+
+### **Pragmatismo Estremo**
+Linus voleva qualcosa che "funzionasse semplicemente" senza filosofie complicate:
+> "I'm an engineer. I see a problem and I fix it"
+
+### **Controllo Totale**
+Dopo l'esperienza con BitKeeper, Linus voleva:
+- Nessuna dipendenza da software proprietario
+- Controllo completo degli algoritmi e delle decisioni di design
+- Garanzia che non si ripetesse mai più una "crisi BitKeeper"
+
+## **L'Urgenza della Situazione**
+
+La community Linux aveva bisogno di una soluzione **immediata**:
+- Il prossimo rilascio del kernel (2.6.12) era imminente
+- Migliaia di patch in attesa di essere integrate
+- Impossibilità di tornare a sistemi primitivi come patch e tar
+
+## **Risultato**
+
+Git fu sviluppato in tempo record:
+- **2 settimane** per la prima versione funzionante
+- **3 mesi** per diventare il sistema ufficiale del kernel Linux
+- **Meno di 1 anno** per diventare lo standard de facto per progetti open source
+
+## **La Filosofia "Do One Thing Well"**
+
+Linus applicò la filosofia Unix anche a Git:
+- Ogni comando fa una cosa specifica molto bene
+- Componibilità: i comandi si combinano per operazioni complesse
+- Efficienza: ottimizzato per le operazioni più comuni
+
+**Citazione famosa di Linus**:
+> "I really never wanted to do source control management at all and felt that it was just about the least interesting thing in the computing world, but somebody had to do it."
+
+La creazione di Git fu quindi una **necessità pratica urgente** più che una passione per i sistemi di controllo versione, ma il risultato fu rivoluzionario per l'intero mondo dello sviluppo software.
+
+
 - **Problemi risolti**: 
   - Gestione versioni distribuite
   - Collaborazione in team
