@@ -1,15 +1,26 @@
-# Corso "GIT a supporto dei tecnici UNIV"
-## Programma dettagliato per 2 giornate da 5 ore ciascuna
+<!--s-->
+## Trasferimento e Condivisione della conoscenza
+La storia dell’umanità è, prima di tutto, la storia del trasferimento della conoscenza.
+Dalla parola orale alla scrittura, dalla stampa fino al mondo digitale, ogni progresso è nato dalla capacità di trasmettere, condividere e trasformare ciò che sappiamo.
 
----
+Nel Medioevo la conoscenza passava dai maestri agli apprendisti; nel Rinascimento circolava tra le accademie e le corti; oggi viaggia in tempo reale attraverso reti globali, università e imprese.
+<!--v-->
+Nel corso dei secoli, anche i supporti utilizzati per trasferire la conoscenza si sono evoluti profondamente.
+All’inizio erano la tradizione orale e la memoria collettiva, strumenti fragili ma potenti, grazie ai quali miti, riti e tecniche venivano tramandati di generazione in generazione.
 
-## **GIORNATA 1 - Fondamenti e Lavoro Locale**
-### **Durata**: 5 ore (9:00-13:00 + 14:00-15:00)
+Poi arrivò la scrittura, che rese possibile fissare il sapere nel tempo: dalle tavolette d’argilla alle pergamene, fino ai manoscritti custoditi nei monasteri.
 
----
+Con l’invenzione della stampa a caratteri mobili, la conoscenza uscì dalle biblioteche e divenne patrimonio condiviso, contribuendo in modo decisivo alla diffusione delle idee scientifiche e umanistiche del Rinascimento.
 
-### **SESSIONE 1: Introduzione e Setup (9:00-10:30)**
+<!--v-->
+### Questo flusso continuo di saperi ha portato tre vantaggi fondamentali:
+- ##### Innovazione .... Ci permette di costruire su esperienze già acquisite, accelerando il progresso scientifico e tecnologico. <!-- .element: class="fragment text-justify" data-fragment-index="0" -->
+- ##### Efficienza .... Condividere buone pratiche riduce gli errori e migliora la produttività delle organizzazioni. <!-- .element: class="fragment text-justify" data-fragment-index="1" -->
+- ##### Crescita .... collettiva Diffondere conoscenza significa diffondere opportunità: favorisce sviluppo economico, dialogo culturale e coesione sociale. <!-- .element: class="fragment text-justify" data-fragment-index="2" -->
 
+Oggi, nel pieno dell’era digitale, il trasferimento della conoscenza è ancora più strategico. Non basta accumulare informazioni: serve la capacità di trasformarle in valore, di adattarle e di farle circolare tra persone, istituzioni e generazioni.<!-- .element: class="fragment text-justify" data-fragment-index="3" -->
+
+<!--s-->
 #### **1.1 Benvenuto e Obiettivi del Corso (20 min)**
 - Presentazione partecipanti e aspettative
 - Panoramica degli obiettivi del corso
