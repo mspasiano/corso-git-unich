@@ -25,9 +25,14 @@ jobs:
           cp -r img build/
           ./node_modules/.bin/reveal-md --preprocessor includes.js --css custom.css --static build --template template.html
           node ./node_modules/decktape/decktape.js reveal -s 2048x1024 --chrome-path "/opt/google/chrome/chrome" build/index.html build/slides.pdf
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: build
+          path: './build'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
