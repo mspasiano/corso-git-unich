@@ -8,9 +8,9 @@ Nel Medioevo la conoscenza passava dai maestri agli apprendisti; nel Rinasciment
 Nel corso dei secoli, anche i supporti utilizzati per trasferire la conoscenza si sono evoluti profondamente.
 All’inizio erano la tradizione orale e la memoria collettiva, strumenti fragili ma potenti, grazie ai quali miti, riti e tecniche venivano tramandati di generazione in generazione.
 
-Poi arrivò la scrittura, che rese possibile fissare il sapere nel tempo: dalle tavolette d’argilla alle pergamene, fino ai manoscritti custoditi nei monasteri.
+Poi arrivò la scrittura, che rese possibile fissare il sapere nel tempo: dalle tavolette d’argilla alle pergamene, fino ai manoscritti custoditi nei monasteri.<!-- .element: class="fragment text-justify" data-fragment-index="1" -->
 
-Con l’invenzione della stampa a caratteri mobili, la conoscenza uscì dalle biblioteche e divenne patrimonio condiviso, contribuendo in modo decisivo alla diffusione delle idee scientifiche e umanistiche del Rinascimento.
+Con l’invenzione della stampa a caratteri mobili, la conoscenza uscì dalle biblioteche e divenne patrimonio condiviso, contribuendo in modo decisivo alla diffusione delle idee scientifiche e umanistiche del Rinascimento.<!-- .element: class="fragment text-justify" data-fragment-index="2" -->
 
 <!--v-->
 ### Questo flusso continuo di saperi ha portato tre vantaggi fondamentali:
@@ -21,54 +21,69 @@ Con l’invenzione della stampa a caratteri mobili, la conoscenza uscì dalle bi
 Oggi, nel pieno dell’era digitale, il trasferimento della conoscenza è ancora più strategico. Non basta accumulare informazioni: serve la capacità di trasformarle in valore, di adattarle e di farle circolare tra persone, istituzioni e generazioni.<!-- .element: class="fragment text-justify" data-fragment-index="3" -->
 
 <!--s-->
-#### **1.1 Benvenuto e Obiettivi del Corso (20 min)**
-- Presentazione partecipanti e aspettative
-- Panoramica degli obiettivi del corso
-- **Focus**: GIT non solo per sviluppatori, ma per tutto il personale tecnico IT
+# Linus Torvalds
+## La nascita di GIT (2005)
 
-#### **1.2 Cenni Storici e Motivazioni (25 min)**
-- **Storia**: Linus Torvalds e la nascita di GIT (2005)
-I motivi che hanno spinto Linus Torvalds a creare Git nel 2005 sono stati principalmente legati alla crisi del sistema di controllo versione che il kernel Linux stava utilizzando:
+<table width="100%" height="100%">
+  <tr>
+    <td width="40%"><img src="img/linus-torvalds.jpeg" alt="Linus Torvalds" width="80%" height="80%"></td>  
+    <td>
+      I motivi che hanno spinto Linus Torvalds a creare Git nel 2005 sono stati principalmente legati alla crisi del sistema di controllo versione che il kernel Linux stava utilizzando.<!-- .element: class="text-justify top" -->
+      <h4>&nbsp;</h4>
+    </td>
+  </tr>
+</table>
+<!--v-->
 
-## **Il Problema con BitKeeper (2005)**
+## Il Problema con BitKeeper (2005)
 
-**BitKeeper Crisis**: Fino al 2005, il progetto del kernel Linux utilizzava BitKeeper, un sistema di controllo versione distribuito proprietario. La società BitMover aveva concesso una licenza gratuita per progetti open source, ma nell'aprile 2005 **revocò questa licenza gratuita** dopo dispute riguardanti il reverse engineering del protocollo da parte di alcuni sviluppatori della community Linux.
+**BitKeeper Crisis**: Fino al 2005, il progetto del kernel Linux utilizzava BitKeeper, un sistema di controllo versione distribuito proprietario. 
 
-## **Le Frustrazioni di Linus**
+La società BitMover aveva concesso una licenza gratuita per progetti open source, ma nell'aprile 2005 **revocò questa licenza gratuita**<!-- .element: class="text-highlights" --> dopo dispute riguardanti il reverse engineering del protocollo da parte di alcuni sviluppatori della community Linux.
 
-### **1. Sistemi Esistenti Inadeguati**
-- **CVS**: Troppo lento e centralizzato, non gestiva bene i merge
-- **Subversion**: Ancora centralizzato, non abbastanza veloce per un progetto delle dimensioni del kernel Linux
-- **Altri sistemi distribuiti**: Non esistevano o erano troppo complessi/lenti
+<!--v-->
+## Le Frustrazioni di Linus
+
+### 1. Sistemi Esistenti Inadeguati
+- CVS: Troppo lento e centralizzato, non gestiva bene i merge<!-- .element: class="fragment text-justify" data-fragment-index="0" -->
+- Subversion: Ancora centralizzato, non abbastanza veloce per un progetto delle dimensioni del kernel Linux<!-- .element: class="fragment text-justify" data-fragment-index="1" -->
+- Altri sistemi distribuiti: Non esistevano o erano troppo complessi/lenti<!-- .element: class="fragment text-justify" data-fragment-index="2" -->
+
+<!--v-->
 
 ### **2. Requisiti Specifici del Kernel Linux**
-- **Scale massive**: Migliaia di sviluppatori, milioni di righe di codice
-- **Merge frequenti**: Centinaia di patch al giorno da integrare
-- **Velocità**: Operazioni che dovevano completarsi in secondi, non minuti
-- **Integrità**: Garanzia assoluta che i dati non fossero corrotti
-- **Workflow distribuito**: Sviluppatori in tutto il mondo senza server centrale
+- Scale massive: Migliaia di sviluppatori, milioni di righe di codice <!-- .element: class="fragment text-justify" data-fragment-index="0" -->
+- Merge frequenti: Centinaia di patch al giorno da integrare<!-- .element: class="fragment text-justify" data-fragment-index="1" -->
+- Velocità: Operazioni che dovevano completarsi in secondi, non minuti<!-- .element: class="fragment text-justify" data-fragment-index="2" -->
+- Integrità: Garanzia assoluta che i dati non fossero corrotti<!-- .element: class="fragment text-justify" data-fragment-index="3" -->
+- Workflow distribuito: Sviluppatori in tutto il mondo senza server centrale<!-- .element: class="fragment text-justify" data-fragment-index="4" -->
 
+<!--v-->
 ## **La "Crisi" del Weekend**
 
 **Timeline critica**:
-- **3 aprile 2005**: BitMover annuncia la fine della licenza gratuita
-- **6-7 aprile 2005**: Linus inizia a sviluppare Git
-- **7 aprile 2005**: Primo commit di Git
-- **16 aprile 2005**: Git si auto-ospita (Git gestisce il proprio codice sorgente)
-- **26 luglio 2005**: Primo kernel Linux gestito con Git
+```json [1|1-2|1-3|1-4|1-5]
+- 3 Aprile 2005: BitMover annuncia la fine della licenza gratuita
+- 6-7 Aprile 2005: Linus inizia a sviluppare Git
+- 7 Aprile 2005: Primo commit di Git
+- 16 Aprile 2005: Git si auto-ospita (Git gestisce il proprio codice sorgente)
+- 26 Luglio 2005: Primo kernel Linux gestito con Git
+```
+<!--v-->
 
-## **Filosofia di Design di Git**
+# **Filosofia di Design di Git**
 
 Linus aveva requisiti molto specifici:
 
-### **Performance**
+## Performance
 > "Git is designed to be very fast. All operations should complete in a few seconds at most"
 
-### **Integrità dei Dati**
+## Integrità dei Dati
 - Ogni oggetto è identificato dal suo hash SHA-1
 - Impossibile corrompere file senza accorgersene
 - Verifica automatica dell'integrità
 
+<!--v-->
 ### **Semplicità Concettuale**
 - Poche operazioni primitive ma potenti
 - Modello di dati semplice (blob, tree, commit, tag)
@@ -78,6 +93,7 @@ Linus aveva requisiti molto specifici:
 - Merge intelligente e automatico
 - Supporto per migliaia di branch paralleli
 
+<!--v-->
 ## **Le Critiche ai Sistemi Esistenti**
 
 Linus era particolarmente critico verso:
@@ -88,11 +104,11 @@ Linus era particolarmente critico verso:
 - Merge problematici
 - Modello centralizzato inadeguato
 
-### **Altri DVCS dell'epoca**:
+### **Altri DVCS(Distributed Version Control System) dell'epoca**:
 - **Monotone**: Troppo lento, design over-engineered
 - **Darcs**: Problemi di performance con repository grandi
 - **Bazaar**: Non esisteva ancora in forma utilizzabile
-
+<!--v-->
 ## **Il Fattore Personalità**
 
 ### **Pragmatismo Estremo**
@@ -104,7 +120,7 @@ Dopo l'esperienza con BitKeeper, Linus voleva:
 - Nessuna dipendenza da software proprietario
 - Controllo completo degli algoritmi e delle decisioni di design
 - Garanzia che non si ripetesse mai più una "crisi BitKeeper"
-
+<!--v-->
 ## **L'Urgenza della Situazione**
 
 La community Linux aveva bisogno di una soluzione **immediata**:
@@ -112,6 +128,7 @@ La community Linux aveva bisogno di una soluzione **immediata**:
 - Migliaia di patch in attesa di essere integrate
 - Impossibilità di tornare a sistemi primitivi come patch e tar
 
+<!--v-->
 ## **Risultato**
 
 Git fu sviluppato in tempo record:

@@ -17,7 +17,7 @@ revealOptions:
 ## GIT a supporto dei tecnici UNIV
 ### 18 Novembre 2025
 
-```js 
+```js [1-3|4-5|6-11|12-15]
 const whoami = {
   firstName: 'Marco',
   lastName: 'Spasiano',
@@ -25,10 +25,10 @@ const whoami = {
   city: 'Napoli',
   company: {
     acronym: 'CNR', 
-    description: 'Consiglio Nazionale delle Ricerche'
+    description: 'Consiglio Nazionale delle Ricerche',
+    office: 'UFFICIO AGENDA DIGITALE E PROCESSI',
+    profile: 'Primo Tecnologo'
   },
-  office: 'UFFICIO AGENDA DIGITALE E PROCESSI',
-  profile:'Primo Tecnologo',
   contacts: {
     email: 'marco.spasiano@cnr.it',
     github: 'https://github.com/mspasiano'

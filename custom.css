@@ -556,3 +556,7 @@ h2[data-irl]::after {
 .text-min {
   font-size: 0.7em; 
 }
+
+.text-highlights {
+  color: #750e29;
+}
