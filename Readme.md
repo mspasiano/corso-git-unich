@@ -346,7 +346,7 @@ git add backup-procedure.md
 git commit --amend -m "Procedura backup completa con notifiche"
 ```
 <!--v-->
-#### **3.2 Gestione dei Branch (30 min)**
+## Gestione dei Branch
 **🛠️ HANDS-ON**: Creazione e uso branch
 ```bash
 # Creiamo un branch per una nuova procedura
@@ -368,15 +368,10 @@ ls  # restore-procedure.md c'è
 git checkout main
 git merge procedura-restore
 ```
+<!--s-->
 
----
-
-## **GIORNATA 2 - Collaborazione e Strumenti Avanzati**
-### **Durata**: 5 ore (9:00-13:00 + 14:00-15:00)
-
----
-
-### **SESSIONE 4: Lavoro Distribuito (9:00-10:30)**
+## Collaborazione e Strumenti Avanzati
+### Lavoro Distribuito
 
 #### **4.1 Repository Remoti (45 min)**
 **🛠️ HANDS-ON**: Connessione a GitLab@UdA

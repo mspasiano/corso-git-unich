@@ -1,5 +1,6 @@
 ---
 title: GIT a supporto dei tecnici UNIV - Chieti 18 Novembre 2025
+title-xs: GIT - Chieti 18/11/25
 separator: <!--s-->
 verticalSeparator: <!--v-->
 theme: black
