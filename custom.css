@@ -150,8 +150,8 @@ body {
 .reveal blockquote {
   display: block;
   position: relative;
-  width: 70%;
-  margin: 20px auto;
+  width: 90%;
+  margin: 10px auto;
   padding: 5px;
   font-style: italic;
   background: rgba(255, 255, 255, 0.05);
@@ -558,5 +558,8 @@ h2[data-irl]::after {
 }
 
 .text-highlights {
-  color: #750e29;
+  color: silver;
+}
+.top-50 {
+  top: 50px !important;
 }

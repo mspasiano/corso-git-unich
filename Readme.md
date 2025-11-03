@@ -84,44 +84,44 @@ Linus aveva requisiti molto specifici:
 - Verifica automatica dell'integrità
 
 <!--v-->
-### **Semplicità Concettuale**
+### Semplicità Concettuale
 - Poche operazioni primitive ma potenti
 - Modello di dati semplice (blob, tree, commit, tag)
 
-### **Supporto per Workflow Non-lineari**
+### Supporto per Workflow Non-lineari
 - Branch rapidi e economici
 - Merge intelligente e automatico
 - Supporto per migliaia di branch paralleli
 
 <!--v-->
-## **Le Critiche ai Sistemi Esistenti**
+## Le Critiche ai Sistemi Esistenti
 
 Linus era particolarmente critico verso:
 
-### **CVS/Subversion**:
+### CVS/Subversion:
 - "CVS è l'esempio di cosa NON fare"
 - Troppo lento per operazioni su larga scala
 - Merge problematici
 - Modello centralizzato inadeguato
 
-### **Altri DVCS(Distributed Version Control System) dell'epoca**:
+### Altri DVCS(Distributed Version Control System) dell'epoca:
 - **Monotone**: Troppo lento, design over-engineered
 - **Darcs**: Problemi di performance con repository grandi
 - **Bazaar**: Non esisteva ancora in forma utilizzabile
 <!--v-->
-## **Il Fattore Personalità**
+## Il Fattore Personalità
 
-### **Pragmatismo Estremo**
+### Pragmatismo Estremo
 Linus voleva qualcosa che "funzionasse semplicemente" senza filosofie complicate:
 > "I'm an engineer. I see a problem and I fix it"
 
-### **Controllo Totale**
+### Controllo Totale
 Dopo l'esperienza con BitKeeper, Linus voleva:
 - Nessuna dipendenza da software proprietario
 - Controllo completo degli algoritmi e delle decisioni di design
 - Garanzia che non si ripetesse mai più una "crisi BitKeeper"
 <!--v-->
-## **L'Urgenza della Situazione**
+## L'Urgenza della Situazione
 
 La community Linux aveva bisogno di una soluzione **immediata**:
 - Il prossimo rilascio del kernel (2.6.12) era imminente
@@ -129,14 +129,15 @@ La community Linux aveva bisogno di una soluzione **immediata**:
 - Impossibilità di tornare a sistemi primitivi come patch e tar
 
 <!--v-->
-## **Risultato**
+## Risultato
 
 Git fu sviluppato in tempo record:
-- **2 settimane** per la prima versione funzionante
-- **3 mesi** per diventare il sistema ufficiale del kernel Linux
-- **Meno di 1 anno** per diventare lo standard de facto per progetti open source
+- **2 settimane**<!-- .element: class="text-highlights" --> per la prima versione funzionante
+- **3 mesi**<!-- .element: class="text-highlights" --> per diventare il sistema ufficiale del kernel Linux
+- **Meno di 1 anno**<!-- .element: class="text-highlights" --> per diventare lo standard de facto per progetti open source
 
-## **La Filosofia "Do One Thing Well"**
+<!--v-->
+### La Filosofia "Do One Thing Well"<!-- .slide: class="top-50" -->
 
 Linus applicò la filosofia Unix anche a Git:
 - Ogni comando fa una cosa specifica molto bene
@@ -146,43 +147,148 @@ Linus applicò la filosofia Unix anche a Git:
 **Citazione famosa di Linus**:
 > "I really never wanted to do source control management at all and felt that it was just about the least interesting thing in the computing world, but somebody had to do it."
 
-La creazione di Git fu quindi una **necessità pratica urgente** più che una passione per i sistemi di controllo versione, ma il risultato fu rivoluzionario per l'intero mondo dello sviluppo software.
+<!--v-->
+### IN CONCLUSIONE
 
+La creazione di Git fu quindi una **necessità pratica urgente** più che una passione per i sistemi di controllo versione, ma il risultato fu rivoluzionario per l'intero mondo dello sviluppo software.
 
 - **Problemi risolti**: 
   - Gestione versioni distribuite
   - Collaborazione in team
   - Tracciabilità delle modifiche
-- **Casi d'uso pratici** per tecnici universitari:
-  - Documentazione di procedure
-  - Script di configurazione
-  - Manuali utente
-  - Note di riunioni PNRR
 
-#### **1.3 Setup dell'Ambiente (25 min)**
+<!--s-->
+### Setup dell'Ambiente
 **🛠️ HANDS-ON**: Preparazione workstation
 - Installazione GIT sui notebook dei partecipanti
-- Configurazione iniziale:
+
+## 🪟 **Windows**
+
+1. Vai su [https://git-scm.com/download/win](https://git-scm.com/download/win)
+2. Scarica il file `Git-<version>.exe`
+3. Esegui l’installer e segui la procedura guidata:
+   - Mantieni le opzioni predefinite consigliate.
+   - Seleziona *“Git Bash Here”* per aggiungere Git al menu contestuale.
+4. Al termine, apri **Git Bash** e verifica:
+   ```bash
+   git --version
+  ```
+<!--v-->
+## 🍏 macOS
+
+Installa Homebrew se non lo hai già, e poi installa Git:
+```bash
+brew install git
+```
+**Metodo 2 — Tramite Xcode Command Line Tools**
+```bash
+xcode-select --install
+```
+**Verifica l’installazione:**
+```bash
+git --version
+```
+<!--v-->
+## 🐧 Linux
+**Ubuntu / Debian**
+```bash
+sudo apt update
+sudo apt install git -y
+```
+**Fedora**
+```bash
+sudo dnf install git -y
+```
+**CentOS / RHEL**
+```bash
+sudo yum install git -y
+```
+**Arch Linux**
+```bash
+sudo pacman -S git
+```
+**Verifica l’installazione:**
+```bash
+git --version
+```
+<!--s-->
+### Configurazione iniziale:
   ```bash
   git config --global user.name "Nome Cognome"
   git config --global user.email "email@unich.it"
   git config --global init.defaultBranch main
   ```
-- Test di connessione a GitLab@UdA
+- Test di connessione a GitHub
 - Setup editor preferito (VS Code, nano, vim)
 
----
+<!--v-->
+### Concetti Fondamentali
 
-### **SESSIONE 2: Concetti Fondamentali (10:45-12:15)**
-
-#### **2.1 Concetti Base (30 min)**
-- **Repository**: cartella "intelligente" con cronologia
+#### Concetti Base
+- **Repository**: cartella "intelligente" con cronologia 
 - **Commit**: snapshot del lavoro
 - **Staging Area**: area di preparazione
 - **Working Directory**: cartella di lavoro
 - **Branch**: linee di sviluppo parallele
+<!--v-->
+### Git - Repository<!-- .slide: class="top-50" -->
 
-#### **2.2 Il Primo Repository (30 min)**
+Un repository Git (o repo) è lo spazio in cui viene memorizzato e gestito il codice sorgente di un progetto, insieme alla storia completa delle modifiche.<!-- .element: class="small" -->
+
+In sintesi:<!-- .element: class="small" -->
+
+- È un archivio che contiene file, cartelle e versioni del progetto nel tempo<!-- .element: class="small" -->
+- Permette a più sviluppatori di collaborare, condividere modifiche, ripristinare versioni precedenti e gestire rami di sviluppo (branch)<!-- .element: class="small" -->
+
+Un repository può essere:<!-- .element: class="fragment small" data-fragment-index="0" -->
+
+- Locale → sul computer dello sviluppatore (git init)<!-- .element: class="fragment small" data-fragment-index="0" -->
+- Remoto → su una piattaforma come GitHub, GitLab o Bitbucket, per la collaborazione online.<!-- .element: class="fragment small" data-fragment-index="1" -->
+- 💡 In breve un repository Git è la memoria storica e collaborativa del codice di un progetto.<!-- .element: class="fragment small" data-fragment-index="2" -->
+
+<!--v-->
+### Git - Commit
+Un git commit è un’istantanea (snapshot) dello stato del progetto in un determinato momento.
+
+In pratica:<!-- .element: class="fragment" data-fragment-index="0" -->
+
+- Registra le modifiche apportate ai file nel repository<!-- .element: class="fragment" data-fragment-index="1" -->
+- Include un messaggio descrittivo che spiega cosa è stato cambiato<!-- .element: class="fragment" data-fragment-index="2" -->
+- Diventa parte della cronologia del progetto, permettendo di tornare indietro o confrontare versioni<!-- .element: class="fragment" data-fragment-index="3" -->
+- 💡 In breve: Un commit è come un “salvataggio” ufficiale del progetto nel tempo, con autore, data e descrizione delle modifiche<!-- .element: class="fragment" data-fragment-index="4" -->
+<!--v-->
+### Git - Staging Area
+La staging area (o area di preparazione) è una zona intermedia di Git dove vengono raccolte le modifiche prima di confermarle con un commit.
+
+In pratica:<!-- .element: class="fragment" data-fragment-index="0" -->
+
+- Permette di scegliere quali file o modifiche includere nel prossimo commit<!-- .element: class="fragment" data-fragment-index="0" -->
+- Funziona come un “piano di lavoro temporaneo” tra il working directory e il repository<!-- .element: class="fragment" data-fragment-index="1" -->
+- 💡 In breve: La staging area è l’area in cui prepari con precisione ciò che verrà salvato nel prossimo commit<!-- .element: class="fragment" data-fragment-index="2" -->
+
+<!--v-->
+### Git - Working Directory
+La working directory è la cartella del progetto sul tuo computer dove lavori sui file tracciati da Git.
+
+In pratica:<!-- .element: class="fragment" data-fragment-index="0" -->
+
+- Contiene la versione attuale dei file del repository<!-- .element: class="fragment" data-fragment-index="0" -->
+- È l’area in cui modifichi, aggiungi o elimini file prima di metterli in staging o fare un commit<!-- .element: class="fragment" data-fragment-index="2" -->
+- 💡 In breve: La working directory è lo spazio di lavoro locale in cui apporti le modifiche al progetto gestito da Git<!-- .element: class="fragment" data-fragment-index="3" -->
+
+<!--v-->
+### Git - Branch
+Un branch in Git è un ramo di sviluppo indipendente che consente di lavorare su nuove funzionalità o correzioni senza modificare il codice principale.
+
+In pratica:<!-- .element: class="fragment" data-fragment-index="0" -->
+
+- Ogni branch rappresenta una linea separata di sviluppo<!-- .element: class="fragment" data-fragment-index="0" -->
+- Puoi creare, unire o eliminare branch per gestire versioni o funzionalità diverse del progetto<!-- .element: class="fragment" data-fragment-index="2" -->
+- 💡 In breve: Un branch è una copia del codice su cui puoi lavorare in parallelo, senza influenzare il ramo principale (main o master).<!-- .element: class="fragment" data-fragment-index="3" -->
+
+<!--s-->
+
+## Il Primo Repository
 **🛠️ HANDS-ON**: Creazione repository
 ```bash
 # Creiamo una cartella per documentazione IT
@@ -198,8 +304,8 @@ echo "1. Verifica spazio disco" >> backup-procedure.md
 git add backup-procedure.md
 git commit -m "Prima versione procedura backup"
 ```
-
-#### **2.3 Lavorare con i File (30 min)**
+<!--v-->
+## Lavorare con i File
 **🛠️ HANDS-ON**: Modifiche e commit
 ```bash
 # Aggiungiamo un file binario (simuliamo un PDF)
@@ -217,16 +323,10 @@ git commit -m "Aggiunta checklist e nuovi passi procedura"
 git log --oneline
 git diff HEAD~1 HEAD
 ```
+<!--v-->
+## Gestione Avanzata Locale
 
----
-
-### **PAUSA PRANZO (12:15-14:00)**
-
----
-
-### **SESSIONE 3: Gestione Avanzata Locale (14:00-15:00)**
-
-#### **3.1 Navigare nella Storia (30 min)**
+#### Navigare nella Storia
 **🛠️ HANDS-ON**: Esplorare i commit
 ```bash
 # Vediamo cosa è cambiato
@@ -245,7 +345,7 @@ echo "4. Notifica completamento backup" >> backup-procedure.md
 git add backup-procedure.md
 git commit --amend -m "Procedura backup completa con notifiche"
 ```
-
+<!--v-->
 #### **3.2 Gestione dei Branch (30 min)**
 **🛠️ HANDS-ON**: Creazione e uso branch
 ```bash
@@ -570,6 +670,13 @@ Al termine del corso, ogni partecipante avrà:
 3. **Conoscenza** dei workflow Git per team tecnici
 4. **Capacità** di risolvere conflitti base
 5. **Comprensione** delle potenzialità di automazione GitLab CI
+
+
+- **Casi d'uso pratici** per tecnici universitari:
+  - Documentazione di procedure
+  - Script di configurazione
+  - Manuali utente
+  - Note di riunioni PNRR
 
 ---
 
