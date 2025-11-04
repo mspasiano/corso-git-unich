@@ -174,6 +174,7 @@ La creazione di Git fu quindi una **necessità pratica urgente** più che una pa
    git --version
   ```
 <!--v-->
+
 ## 🍏 macOS
 
 Installa Homebrew se non lo hai già, e poi installa Git:
