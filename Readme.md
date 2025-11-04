@@ -170,13 +170,12 @@ La creazione di Git fu quindi una **necessità pratica urgente** più che una pa
    - Mantieni le opzioni predefinite consigliate.
    - Seleziona *“Git Bash Here”* per aggiungere Git al menu contestuale.
 4. Al termine, apri **Git Bash** e verifica:
-   ```bash
-   git --version
-  ```
+```bash
+git --version
+```
 <!--v-->
 
 ## 🍏 macOS
-
 Installa Homebrew se non lo hai già, e poi installa Git:
 ```bash
 brew install git
