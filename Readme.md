@@ -162,7 +162,7 @@ La creazione di Git fu quindi una **necessità pratica urgente** più che una pa
 **🛠️ HANDS-ON**: Preparazione workstation
 - Installazione GIT sui notebook dei partecipanti
 
-## 🪟 **Windows**
+## Windows ![Windows](img/windows.png) <!-- .element: class="logo" -->
 
 1. Vai su [https://git-scm.com/download/win](https://git-scm.com/download/win)
 2. Scarica il file `Git-<version>.exe`
@@ -175,7 +175,7 @@ git --version
 ```
 <!--v-->
 
-## 🍏 macOS
+## macOS ![macOS](img/ios.png) <!-- .element: class="logo" -->
 Installa Homebrew se non lo hai già, e poi installa Git:
 ```bash
 brew install git
@@ -189,7 +189,7 @@ xcode-select --install
 git --version
 ```
 <!--v-->
-## 🐧 Linux
+## Linux  ![Linux](img/linux.png) <!-- .element: class="logo" -->
 **Ubuntu / Debian**
 ```bash
 sudo apt update
@@ -290,7 +290,7 @@ In pratica:<!-- .element: class="fragment" data-fragment-index="0" -->
 
 ## Il Primo Repository
 **🛠️ HANDS-ON**: Creazione repository
-```bash
+```bash [1-4|6-9|11-12]
 # Creiamo una cartella per documentazione IT
 mkdir doc-procedure-it
 cd doc-procedure-it
@@ -307,7 +307,7 @@ git commit -m "Prima versione procedura backup"
 <!--v-->
 ## Lavorare con i File
 **🛠️ HANDS-ON**: Modifiche e commit
-```bash
+```bash [1-3|5-7|9-10|12-14]
 # Aggiungiamo un file binario (simuliamo un PDF)
 cp /path/to/sample.pdf checklist-backup.pdf
 git add checklist-backup.pdf
@@ -328,7 +328,7 @@ git diff HEAD~1 HEAD
 
 #### Navigare nella Storia
 **🛠️ HANDS-ON**: Esplorare i commit
-```bash
+```bash [1-3|5-7|9-10|12-15]
 # Vediamo cosa è cambiato
 git log --stat
 git log --graph --oneline
@@ -348,7 +348,7 @@ git commit --amend -m "Procedura backup completa con notifiche"
 <!--v-->
 ## Gestione dei Branch
 **🛠️ HANDS-ON**: Creazione e uso branch
-```bash
+```bash [1-2|4-8|10-14|16-18]
 # Creiamo un branch per una nuova procedura
 git checkout -b procedura-restore
 
@@ -369,16 +369,28 @@ git checkout main
 git merge procedura-restore
 ```
 <!--s-->
-
 ## Collaborazione e Strumenti Avanzati
+### Repository Remoti
+**🛠️ HANDS-ON**: Personal Access Token su GitHub
+
+- Vai su https://github.com/settings/tokens
+- Clicca su “Generate new token (classic)”
+- Dai un nome al token (es. git-training)
+- Imposta la durata (es. 7 giorni)
+- Seleziona i permessi minimi:
+
+✅ repo → per gestire repository privati/pubblici
+
+Clicca Generate token
+
+**Copia il token una sola volta — non potrai rivederlo!**
+
+<!--v-->
 ### Lavoro Distribuito
-
-#### **4.1 Repository Remoti (45 min)**
-**🛠️ HANDS-ON**: Connessione a GitLab@UdA
-
-```bash
-# Cloniamo un repository esistente su GitLab@UdA
-git clone https://gitlab.unich.it/corso-git/esempio-documentazione.git
+**🛠️ HANDS-ON**: Cloniamo repository su GitHub
+```bash [1-3|5-8|10-11|13-15|17-18]
+# Cloniamo un repository esistente su GitHub
+git clone https://github.com/training-it/esempio-documentazione.git
 cd esempio-documentazione
 
 # Esploriamo il repository
@@ -386,22 +398,22 @@ git status
 git log --oneline
 git remote -v
 
-# Creiamo un nuovo repo sulla nostra area personale GitLab
-# (tramite interfaccia web)
+# Creiamo un nuovo repo sulla nostra organizzazione GitHub
+# Che chiamiamo doc-procedure-it (tramite interfaccia web)
 
 # Aggiungiamo il nostro repo locale come remoto
 cd ../doc-procedure-it
-git remote add origin https://gitlab.unich.it/[username]/doc-procedure-it.git
+git remote add origin https://<TOKEN>@github.com/training-it/doc-procedure-it.git
 
 # Push del nostro lavoro
 git push -u origin main
 ```
-
-#### **4.2 Collaborazione Base (45 min)**
+<!--v-->
+### Collaborazione Base
 **🛠️ HANDS-ON**: Push e Pull
-```bash
+```bash [1-2|4-5|7-9|11-12|14-15]
 # Simuliamo lavoro di un collega (dal docente)
-# Modifica da interfaccia web GitLab
+# Modifica da interfaccia web GitHub
 
 # I partecipanti fanno pull
 git pull origin main
@@ -416,14 +428,12 @@ git commit -m "Aggiunta sezione monitoring"
 # Push delle modifiche
 git push origin main
 ```
+<!--v-->
+### Gestione Conflitti
 
----
-
-### **SESSIONE 5: Gestione Conflitti (10:45-12:15)**
-
-#### **5.1 Generazione e Risoluzione Conflitti (45 min)**
+#### Generazione e Risoluzione Conflitti
 **🛠️ HANDS-ON**: Conflitti reali
-```bash
+```bash [1-2|4-6|8-9|11-13|15-17|19-21]
 # Il docente modifica lo stesso file dalla web interface
 # I partecipanti modificano localmente la stessa riga
 
@@ -446,9 +456,42 @@ git add backup-procedure.md
 git commit -m "Risolto conflitto orario backup"
 git push origin main
 ```
+<!--v-->
+## Generazione e Risoluzione Conflitti<!-- .slide: class="font-75" -->
+### git config pull.rebase false - Merge
 
-#### **5.2 Buone Pratiche nei Messaggi di Commit (45 min)**
+Quando eseguiamo un git pull, Git deve integrare le modifiche remote (del server) con le modifiche locali.
+
+I tre comandi che abbiamo visto servono a dire a Git come deve fare questa integrazione.
+
+🧩 1. **git config pull.rebase false** → Merge (comportamento predefinito) 👉 Dice a Git di unire le modifiche remote usando un merge commit.
+
+Crea un nuovo commit di fusione ed è la scelta più “sicura” e mantiene la storia completa e ramificata.
+
+✅ Vantaggio: preserva la cronologia completa.
+
+⚠️ Svantaggio: la storia può diventare più “ramificata” e difficile da leggere.
+
+<!--v-->
+### git config pull.rebase true → Rebase<!-- .slide: class="font-75" -->
+👉 Dice a Git di spostare i commit locali sopra a quelli remoti, come se fossero stati fatti dopo, in pratica riscrive la storia.
+
+✅ Vantaggio: storia lineare e pulita
+
+⚠️ Svantaggio: riscrive i commit → attenzione se il branch è condiviso con altri.
+
+### git config pull.ff only → Fast-forward only
+👉 Dice a Git di aggiornare il branch **solo se può avanzare senza conflitti**, cioè senza creare merge né rebase.
+Funziona solo se non ci sono commit locali.
+
+✅ Vantaggio: storia perfettamente lineare e sicura.
+
+⚠️ Svantaggio: fallisce se hai commit locali non presenti nel remoto.
+<!--v-->
+
+## Buone Pratiche nei Messaggi di Commit
 **🛠️ HANDS-ON**: Analisi repository reali
+
 ```bash
 # Analizziamo commit ben scritti
 git log --oneline -10
@@ -468,13 +511,7 @@ cd postgres
 git log --oneline -20
 git log --grep="backup"
 ```
-
----
-
-### **PAUSA PRANZO (12:15-14:00)**
-
----
-
+<!--s-->
 ### **SESSIONE 6: GitLab e Workflow Avanzati (14:00-15:00)**
 
 #### **6.1 Piattaforme Git Web-Based (20 min)**
@@ -673,6 +710,12 @@ Al termine del corso, ogni partecipante avrà:
   - Manuali utente
   - Note di riunioni PNRR
 
----
+<!--s-->
 
-*Corso progettato per massimizzare l'aspetto pratico e minimizzare la teoria astratta, con focus sui benefici concreti per il lavoro quotidiano del personale tecnico universitario.*
+# Grazie!
+
+marco.spasiano@cnr.it 
+
+https://github.com/mspasiano 
+
+[Questa presentazione in pdf](https://mspasiano.github.io/corso-git-unich/slides.pdf)

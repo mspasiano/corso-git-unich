@@ -558,8 +558,25 @@ h2[data-irl]::after {
 }
 
 .text-highlights {
-  color: silver;
+  color: #ede321;
+  text-shadow: none;
+  border: none;
 }
+
 .top-50 {
   top: 50px !important;
+}
+
+.logo {
+  margin: unset !important;
+  box-shadow: unset !important;
+  background: unset !important;
+}
+
+.highlight-line .hljs-comment {
+  color: #dcdccc;
+}
+
+.font-75 {
+  font-size: 75%;
 }
