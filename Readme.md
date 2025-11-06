@@ -512,57 +512,45 @@ git log --oneline -20
 git log --grep="backup"
 ```
 <!--s-->
-### **SESSIONE 6: GitLab e Workflow Avanzati (14:00-15:00)**
+### Piattaforme Git Web-Based GitLab vs GitHub vs Bitbucket<!-- .slide: class="font-75" -->
 
-#### **6.1 Piattaforme Git Web-Based (20 min)**
-- **GitLab vs GitHub vs Bitbucket**: differenze e scelte
-- **Funzionalità aggiuntive**:
-  - Issue tracking per segnalazioni
-  - Wiki integrata per documentazione
-  - CI/CD pipeline
-  - Code review
-- **Perché GitLab@UdA**: controllo, privacy, integrazione GARR
+- **GitHub**
+  
+  - Piattaforma più popolare e diffusa per ospitare codice.
 
-#### **6.2 Workflow di Gruppo (40 min)**
-**🛠️ HANDS-ON**: Branch e Merge Request
+  - Ottima integrazione con open source, GitHub Actions, e una grande community.
 
-```bash
-# Workflow GitFlow semplificato
-git checkout -b feature/procedura-disaster-recovery
+  - Ideale per progetti pubblici o collaborazioni open.
 
-# Sviluppiamo la nuova feature
-echo "# Disaster Recovery Plan" > disaster-recovery.md
-echo "## Fase 1: Valutazione Danni" >> disaster-recovery.md
-echo "- Identificazione servizi compromessi" >> disaster-recovery.md
-echo "- Stima tempi di ripristino" >> disaster-recovery.md
+  - 💡 Punto di forza: community e integrazione con strumenti di sviluppo (CI/CD, issues, code review).
+<!--v-->
+### Piattaforme Git Web-Based GitLab vs GitHub vs Bitbucket<!-- .slide: class="font-75" -->
+- **GitLab**
 
-git add disaster-recovery.md
-git commit -m "Add: bozza disaster recovery plan"
+  - Alternativa open source e self-hosted a GitHub.
 
-echo "## Fase 2: Ripristino Servizi Critici" >> disaster-recovery.md
-echo "- Database principale" >> disaster-recovery.md
-echo "- Servizi autenticazione" >> disaster-recovery.md
+  - Include in un’unica piattaforma tutto il ciclo DevOps: repository, CI/CD, sicurezza, monitoraggio.
 
-git add disaster-recovery.md
-git commit -m "Add: fase 2 disaster recovery"
+  - Ideale per aziende o organizzazioni che vogliono controllo completo dei dati.
 
-# Push del branch
-git push origin feature/procedura-disaster-recovery
-```
+  - 💡 Punto di forza: pipeline CI/CD integrate e completa automazione DevOps.
+<!--v-->
+### Piattaforme Git Web-Based GitLab vs GitHub vs Bitbucket<!-- .slide: class="font-75" -->
+- **Bitbucket**
 
-**Tramite GitLab Web Interface:**
-- Creazione Merge Request
-- Assegnazione reviewer
-- Discussione e feedback
-- Merge finale
+  - Piattaforma Atlassian integrata con Jira e Confluence.
 
----
+  - Supporta sia Git che Mercurial (storicamente).
 
-## **SESSIONE 7: Sicurezza e Best Practices (Durante entrambe le giornate)**
+  - Ottima per team aziendali già nell’ecosistema Atlassian.
 
-### **7.1 Cosa NON fare - Gestione Segreti**
+  - 💡 Punto di forza: integrazione stretta con strumenti di project management (Jira, Trello).
+
+<!--s-->
+## Sicurezza e Best Practices
+### Cosa NON fare - Gestione Segreti
 **🛠️ HANDS-ON**: Simulazione errore comune
-```bash
+```bash [1-4|6-10|11-16]
 # ERRORE: Commit accidentale di password
 echo "DB_PASSWORD=super_secret_123" > config.txt
 git add config.txt
@@ -580,8 +568,8 @@ echo "# Variabile d'ambiente DB_PASSWORD richiesta" >> config.txt
 git add config.txt
 git commit -m "Template configurazione database (senza credenziali)"
 ```
-
-### **7.2 File .gitignore**
+<!--v-->
+### File .gitignore
 ```bash
 # Creiamo .gitignore per file sensibili
 echo "*.log" > .gitignore
@@ -592,12 +580,9 @@ echo "backup/*.sql" >> .gitignore
 git add .gitignore
 git commit -m "Add: gitignore per file sensibili"
 ```
-
----
-
-## **SESSIONE 8: Automazione con GitLab CI/CD (Sessione Avanzata)**
-
-### **8.1 Introduzione alle Pipeline (30 min)**
+<!--v-->
+## Automazione con GitLab CI/CD (Sessione Avanzata)<!-- .slide: class="font-75" -->
+### Introduzione alle Pipeline
 **🛠️ HANDS-ON**: Prima pipeline GitLab CI
 
 Creiamo `.gitlab-ci.yml`:
@@ -631,12 +616,51 @@ deploy_docs:
   only:
     - main
 ```
+<!--v-->
+## Principali sistemi di Continuous Integration / Continuous Deployment (CI/CD)<!-- .slide: class="font-75" -->
+### CircleCI
+
+- Servizio cloud-based molto flessibile e veloce.
+- Supporta pipeline complesse con configurazione in YAML.
+- Buone prestazioni e caching intelligente.
+- 💡 Ideale per progetti multi-linguaggio e team che vogliono scalabilità rapida.
+- [config.yml](https://github.com/consiglionazionaledellericerche/sigla-main/blob/master/.circleci/config.yml)
+
+### Travis CI
+
+- Uno dei primi servizi CI popolari per GitHub.
+- Semplice da configurare (.travis.yml), ma oggi meno usato.
+- Ottimo per progetti open source, con build gratuite.
+- 💡 Facile da usare, ma meno integrato rispetto a soluzioni più moderne.
+- [.travis.yml](https://github.com/consiglionazionaledellericerche/sigla-main/blob/master/.travis.yml)
+<!--v-->
+## Principali sistemi di Continuous Integration / Continuous Deployment (CI/CD)<!-- .slide: class="font-75" -->
+### GitLab CI/CD
+
+- Integrato nativamente in GitLab, non richiede servizi esterni.
+- Gestisce tutto il ciclo DevOps: build, test, deploy, sicurezza.
+- Supporta sia cloud che self-hosted runners.
+- 💡 Ideale per aziende che vogliono controllo e automazione completa nel proprio ambiente.
+- [.gitlab-ci.yml](https://github.com/consiglionazionaledellericerche/sigla-main/blob/master/.gitlab-ci.yml)
+
+### GitHub Actions
+- Integrato direttamente in GitHub.
+- Usa workflow YAML (.github/workflows) per automatizzare test, build e release.
+- Ampia libreria di azioni predefinite della community.
+- 💡 Perfetto per progetti già su GitHub e integrazione continua semplice.
+- [docs.yml](https://github.com/istitutosuperioredisanita/sigla-main/blob/master/.github/workflows/docs.yml)
+- [maven.yml](https://github.com/istitutosuperioredisanita/sigla-main/blob/master/.github/workflows/maven.yml)
+- [release.yml](https://github.com/istitutosuperioredisanita/sigla-main/blob/master/.github/workflows/release.yml)
 <!--s-->
 
 # Grazie!
 
 marco.spasiano@cnr.it 
 
-https://github.com/mspasiano 
+https://github.com/mspasiano
+
+https://github.com/consiglionazionaledellericerche
+
+https://github.com/trasparenzAI
 
 [Questa presentazione in pdf](https://mspasiano.github.io/corso-git-unich/slides.pdf)
