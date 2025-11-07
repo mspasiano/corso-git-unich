@@ -4,7 +4,7 @@
     "highlight.js": "10.7.2",
     "puppeteer": "^11.0.0",
     "puppeteer-core": "^11.0.0",
-    "reveal-md": "^6.1.4",
+    "reveal-md": "^5.5.2",
     "serve-favicon": "2.5.0"
   }
 }

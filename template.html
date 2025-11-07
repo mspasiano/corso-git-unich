@@ -97,7 +97,9 @@
     {{/scriptPaths}}
 
     <script>
-      Reveal.initialize(options);
+      Reveal.initialize(options).then(() => {
+        console.log("Reveal initialized");
+      });
     </script>
 
     <div class="fixed-bottom d-flex justify-content-start ps-2">
