@@ -218,7 +218,6 @@ git --version
   git config --global user.email "email@unich.it"
   git config --global init.defaultBranch main
   ```
-- Test di connessione a GitHub
 - Setup editor preferito (VS Code, nano, vim)
 
 <!--v-->
@@ -390,7 +389,7 @@ Clicca Generate token
 **🛠️ HANDS-ON**: Cloniamo repository su GitHub
 ```bash [1-3|5-8|10-11|13-15|17-18]
 # Cloniamo un repository esistente su GitHub
-git clone https://github.com/training-it/esempio-documentazione.git
+git clone https://github.com/training-it-unich/esempio-documentazione.git
 cd esempio-documentazione
 
 # Esploriamo il repository
@@ -403,7 +402,7 @@ git remote -v
 
 # Aggiungiamo il nostro repo locale come remoto
 cd ../doc-procedure-it
-git remote add origin https://<TOKEN>@github.com/training-it/doc-procedure-it.git
+git remote add origin https://<TOKEN>@github.com/training-it-unich/doc-procedure-it.git
 
 # Push del nostro lavoro
 git push -u origin main
