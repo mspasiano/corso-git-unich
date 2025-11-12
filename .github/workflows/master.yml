@@ -16,18 +16,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v3
         with:
           persist-credentials: false
-      - name: Cache node-modules 💽
+      - name: Cache node-modules
         uses: actions/cache@v4
         env:
           cache-name: cache-node-modules
         with:
           path: ~/.npm
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-      - name: Install and Build 🔧
+      - name: Install and Build
         run: |
           npm install --no-optional reveal-md decktape
           mkdir build
@@ -41,6 +41,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: './build'
+
   deploy:
     environment:
       name: github-pages
