@@ -652,16 +652,18 @@ deploy_docs:
 - [release.yml](https://github.com/istitutosuperioredisanita/sigla-main/blob/master/.github/workflows/release.yml)
 <!--s-->
 
+> "Nessun ladro, per quanto scaltro, potrà mai rubarti la conoscenza"
+
 ## Grazie!
 
 ### Qualche riferimento utile
 
-marco.spasiano@cnr.it 
+* marco.spasiano@cnr.it 
 
-https://github.com/mspasiano
+* https://github.com/mspasiano
 
-https://github.com/consiglionazionaledellericerche
+* https://github.com/consiglionazionaledellericerche
 
-https://github.com/trasparenzAI
+* https://github.com/trasparenzAI
 
-[Questa presentazione in pdf](https://mspasiano.github.io/corso-git-unich/slides.pdf)
+* [Questa presentazione in pdf](https://mspasiano.github.io/corso-git-unich/slides.pdf)
