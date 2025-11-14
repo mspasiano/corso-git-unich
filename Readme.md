@@ -152,10 +152,75 @@ Linus applicò la filosofia Unix anche a Git:
 
 La creazione di Git fu quindi una **necessità pratica urgente** più che una passione per i sistemi di controllo versione, ma il risultato fu rivoluzionario per l'intero mondo dello sviluppo software.
 
-- **Problemi risolti**: 
-  - Gestione versioni distribuite
-  - Collaborazione in team
-  - Tracciabilità delle modifiche
+## Problemi risolti 
+- Gestione versioni distribuite
+- Collaborazione in team
+- Tracciabilità delle modifiche
+<!--s-->
+
+### Concetti Fondamentali
+
+#### Concetti Base
+- **Repository**: cartella "intelligente" con cronologia 
+- **Commit**: snapshot del lavoro
+- **Staging Area**: area di preparazione
+- **Working Directory**: cartella di lavoro
+- **Branch**: linee di sviluppo parallele
+<!--v-->
+### Git - Repository<!-- .slide: class="top-50" -->
+
+Un repository Git (o repo) è lo spazio in cui viene memorizzato e gestito il codice sorgente di un progetto, insieme alla storia completa delle modifiche.<!-- .element: class="small" -->
+
+In sintesi:<!-- .element: class="small" -->
+
+- È un archivio che contiene file, cartelle e versioni del progetto nel tempo<!-- .element: class="small" -->
+- Permette a più sviluppatori di collaborare, condividere modifiche, ripristinare versioni precedenti e gestire rami di sviluppo (branch)<!-- .element: class="small" -->
+
+Un repository può essere:<!-- .element: class="fragment small" data-fragment-index="0" -->
+
+- Locale → sul computer dello sviluppatore (git init)<!-- .element: class="fragment small" data-fragment-index="0" -->
+- Remoto → su una piattaforma come GitHub, GitLab o Bitbucket, per la collaborazione online.<!-- .element: class="fragment small" data-fragment-index="1" -->
+- 💡 In breve un repository Git è la memoria storica e collaborativa del codice di un progetto.<!-- .element: class="fragment small" data-fragment-index="2" -->
+
+<!--v-->
+### Git - Commit
+Un git commit è un’istantanea (snapshot) dello stato del progetto in un determinato momento.
+
+In pratica:<!-- .element: class="fragment" data-fragment-index="0" -->
+
+- Registra le modifiche apportate ai file nel repository<!-- .element: class="fragment" data-fragment-index="1" -->
+- Include un messaggio descrittivo che spiega cosa è stato cambiato<!-- .element: class="fragment" data-fragment-index="2" -->
+- Diventa parte della cronologia del progetto, permettendo di tornare indietro o confrontare versioni<!-- .element: class="fragment" data-fragment-index="3" -->
+- 💡 In breve: Un commit è come un “salvataggio” ufficiale del progetto nel tempo, con autore, data e descrizione delle modifiche<!-- .element: class="fragment" data-fragment-index="4" -->
+<!--v-->
+### Git - Staging Area
+La staging area (o area di preparazione) è una zona intermedia di Git dove vengono raccolte le modifiche prima di confermarle con un commit.
+
+In pratica:<!-- .element: class="fragment" data-fragment-index="0" -->
+
+- Permette di scegliere quali file o modifiche includere nel prossimo commit<!-- .element: class="fragment" data-fragment-index="0" -->
+- Funziona come un “piano di lavoro temporaneo” tra il working directory e il repository<!-- .element: class="fragment" data-fragment-index="1" -->
+- 💡 In breve: La staging area è l’area in cui prepari con precisione ciò che verrà salvato nel prossimo commit<!-- .element: class="fragment" data-fragment-index="2" -->
+
+<!--v-->
+### Git - Working Directory
+La working directory è la cartella del progetto sul tuo computer dove lavori sui file tracciati da Git.
+
+In pratica:<!-- .element: class="fragment" data-fragment-index="0" -->
+
+- Contiene la versione attuale dei file del repository<!-- .element: class="fragment" data-fragment-index="0" -->
+- È l’area in cui modifichi, aggiungi o elimini file prima di metterli in staging o fare un commit<!-- .element: class="fragment" data-fragment-index="2" -->
+- 💡 In breve: La working directory è lo spazio di lavoro locale in cui apporti le modifiche al progetto gestito da Git<!-- .element: class="fragment" data-fragment-index="3" -->
+
+<!--v-->
+### Git - Branch
+Un branch in Git è un ramo di sviluppo indipendente che consente di lavorare su nuove funzionalità o correzioni senza modificare il codice principale.
+
+In pratica:<!-- .element: class="fragment" data-fragment-index="0" -->
+
+- Ogni branch rappresenta una linea separata di sviluppo<!-- .element: class="fragment" data-fragment-index="0" -->
+- Puoi creare, unire o eliminare branch per gestire versioni o funzionalità diverse del progetto<!-- .element: class="fragment" data-fragment-index="2" -->
+- 💡 In breve: Un branch è una copia del codice su cui puoi lavorare in parallelo, senza influenzare il ramo principale (main o master).<!-- .element: class="fragment" data-fragment-index="3" -->
 
 <!--s-->
 ### Setup dell'Ambiente
@@ -236,73 +301,7 @@ git config --global mergetool.vscode.cmd "code --wait $MERGED"
 git config --global diff.tool vscode
 git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
 ```
-
 <!--v-->
-### Concetti Fondamentali
-
-#### Concetti Base
-- **Repository**: cartella "intelligente" con cronologia 
-- **Commit**: snapshot del lavoro
-- **Staging Area**: area di preparazione
-- **Working Directory**: cartella di lavoro
-- **Branch**: linee di sviluppo parallele
-<!--v-->
-### Git - Repository<!-- .slide: class="top-50" -->
-
-Un repository Git (o repo) è lo spazio in cui viene memorizzato e gestito il codice sorgente di un progetto, insieme alla storia completa delle modifiche.<!-- .element: class="small" -->
-
-In sintesi:<!-- .element: class="small" -->
-
-- È un archivio che contiene file, cartelle e versioni del progetto nel tempo<!-- .element: class="small" -->
-- Permette a più sviluppatori di collaborare, condividere modifiche, ripristinare versioni precedenti e gestire rami di sviluppo (branch)<!-- .element: class="small" -->
-
-Un repository può essere:<!-- .element: class="fragment small" data-fragment-index="0" -->
-
-- Locale → sul computer dello sviluppatore (git init)<!-- .element: class="fragment small" data-fragment-index="0" -->
-- Remoto → su una piattaforma come GitHub, GitLab o Bitbucket, per la collaborazione online.<!-- .element: class="fragment small" data-fragment-index="1" -->
-- 💡 In breve un repository Git è la memoria storica e collaborativa del codice di un progetto.<!-- .element: class="fragment small" data-fragment-index="2" -->
-
-<!--v-->
-### Git - Commit
-Un git commit è un’istantanea (snapshot) dello stato del progetto in un determinato momento.
-
-In pratica:<!-- .element: class="fragment" data-fragment-index="0" -->
-
-- Registra le modifiche apportate ai file nel repository<!-- .element: class="fragment" data-fragment-index="1" -->
-- Include un messaggio descrittivo che spiega cosa è stato cambiato<!-- .element: class="fragment" data-fragment-index="2" -->
-- Diventa parte della cronologia del progetto, permettendo di tornare indietro o confrontare versioni<!-- .element: class="fragment" data-fragment-index="3" -->
-- 💡 In breve: Un commit è come un “salvataggio” ufficiale del progetto nel tempo, con autore, data e descrizione delle modifiche<!-- .element: class="fragment" data-fragment-index="4" -->
-<!--v-->
-### Git - Staging Area
-La staging area (o area di preparazione) è una zona intermedia di Git dove vengono raccolte le modifiche prima di confermarle con un commit.
-
-In pratica:<!-- .element: class="fragment" data-fragment-index="0" -->
-
-- Permette di scegliere quali file o modifiche includere nel prossimo commit<!-- .element: class="fragment" data-fragment-index="0" -->
-- Funziona come un “piano di lavoro temporaneo” tra il working directory e il repository<!-- .element: class="fragment" data-fragment-index="1" -->
-- 💡 In breve: La staging area è l’area in cui prepari con precisione ciò che verrà salvato nel prossimo commit<!-- .element: class="fragment" data-fragment-index="2" -->
-
-<!--v-->
-### Git - Working Directory
-La working directory è la cartella del progetto sul tuo computer dove lavori sui file tracciati da Git.
-
-In pratica:<!-- .element: class="fragment" data-fragment-index="0" -->
-
-- Contiene la versione attuale dei file del repository<!-- .element: class="fragment" data-fragment-index="0" -->
-- È l’area in cui modifichi, aggiungi o elimini file prima di metterli in staging o fare un commit<!-- .element: class="fragment" data-fragment-index="2" -->
-- 💡 In breve: La working directory è lo spazio di lavoro locale in cui apporti le modifiche al progetto gestito da Git<!-- .element: class="fragment" data-fragment-index="3" -->
-
-<!--v-->
-### Git - Branch
-Un branch in Git è un ramo di sviluppo indipendente che consente di lavorare su nuove funzionalità o correzioni senza modificare il codice principale.
-
-In pratica:<!-- .element: class="fragment" data-fragment-index="0" -->
-
-- Ogni branch rappresenta una linea separata di sviluppo<!-- .element: class="fragment" data-fragment-index="0" -->
-- Puoi creare, unire o eliminare branch per gestire versioni o funzionalità diverse del progetto<!-- .element: class="fragment" data-fragment-index="2" -->
-- 💡 In breve: Un branch è una copia del codice su cui puoi lavorare in parallelo, senza influenzare il ramo principale (main o master).<!-- .element: class="fragment" data-fragment-index="3" -->
-
-<!--s-->
 
 ## Il Primo Repository
 **🛠️ HANDS-ON**: Creazione repository

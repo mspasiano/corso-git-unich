@@ -378,7 +378,8 @@ html.rightbanner body {
 
 .slides section p, .slides section ul, .slides section i {
   padding-left: 6%;
-  padding-right: 6%; }
+  padding-right: 6%; 
+}
 
 
 html.intro .reveal .slides section h1, html.intro .reveal .slides section h2 {
