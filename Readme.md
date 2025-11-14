@@ -124,7 +124,7 @@ Dopo l'esperienza con BitKeeper, Linus voleva:
 ## L'Urgenza della Situazione
 
 La community Linux aveva bisogno di una soluzione **immediata**:
-- Il prossimo rilascio del kernel (2.6.12) era imminente
+- Il successivo rilascio del kernel (2.6.12) era imminente
 - Migliaia di patch in attesa di essere integrate
 - Impossibilità di tornare a sistemi primitivi come patch e tar
 
@@ -213,12 +213,29 @@ git --version
 ```
 <!--s-->
 ### Configurazione iniziale:
-  ```bash
-  git config --global user.name "Nome Cognome"
-  git config --global user.email "email@unich.it"
-  git config --global init.defaultBranch main
-  ```
+```bash
+git config --global user.name "Nome Cognome"
+git config --global user.email "email@unich.it"
+git config --global init.defaultBranch main
+```
 - Setup editor preferito (VS Code, nano, vim)
+
+```bash
+git config core.editor "vim"
+```
+Il _--global_ fa si che imposta **Nano** come editor predefinito per tutti i repository Git
+```bash
+git config --global core.editor "nano"
+```
+Per VS Code invece:
+```bash
+git config --global core.editor "code --wait"
+# Se si vuole usare VS Code anche per risolvere conflitti
+git config --global merge.tool vscode
+git config --global mergetool.vscode.cmd "code --wait $MERGED"
+git config --global diff.tool vscode
+git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
+```
 
 <!--v-->
 ### Concetti Fondamentali
