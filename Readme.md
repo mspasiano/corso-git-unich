@@ -675,7 +675,7 @@ deploy_docs:
 - Integrato nativamente in GitLab, non richiede servizi esterni.
 - Gestisce tutto il ciclo DevOps: build, test, deploy, sicurezza.
 - Supporta sia cloud che self-hosted runners.
-- 💡 Ideale per aziende che vogliono controllo e automazione completa nel proprio ambiente.
+- 💡 Ideale per chi vuole controllo e automazione completa nel proprio ambiente.
 - [.gitlab-ci.yml](https://github.com/consiglionazionaledellericerche/sigla-main/blob/master/.gitlab-ci.yml)
 
 ### GitHub Actions
