@@ -44,14 +44,29 @@ La società BitMover aveva concesso una licenza gratuita per progetti open sourc
 <!--v-->
 ## Le Frustrazioni di Linus
 
-### 1. Sistemi Esistenti Inadeguati
+### Sistemi Esistenti Inadeguati
 - CVS: Troppo lento e centralizzato, non gestiva bene i merge<!-- .element: class="fragment text-justify" data-fragment-index="0" -->
 - Subversion: Ancora centralizzato, non abbastanza veloce per un progetto delle dimensioni del kernel Linux<!-- .element: class="fragment text-justify" data-fragment-index="1" -->
 - Altri sistemi distribuiti: Non esistevano o erano troppo complessi/lenti<!-- .element: class="fragment text-justify" data-fragment-index="2" -->
 
 <!--v-->
+## Le Critiche ai Sistemi Esistenti
 
-### **2. Requisiti Specifici del Kernel Linux**
+Linus era particolarmente critico verso:
+
+### CVS/Subversion:
+- "CVS è l'esempio di cosa NON fare"
+- Troppo lento per operazioni su larga scala
+- Merge problematici
+- Modello centralizzato inadeguato
+
+### Altri DVCS(Distributed Version Control System) dell'epoca:
+- **Monotone**: Troppo lento, design over-engineered
+- **Darcs**: Problemi di performance con repository grandi
+- **Bazaar**: Non esisteva ancora in forma utilizzabile
+<!--v-->
+
+### Requisiti Specifici del Kernel Linux
 - Scale massive: Migliaia di sviluppatori, milioni di righe di codice <!-- .element: class="fragment text-justify" data-fragment-index="0" -->
 - Merge frequenti: Centinaia di patch al giorno da integrare<!-- .element: class="fragment text-justify" data-fragment-index="1" -->
 - Velocità: Operazioni che dovevano completarsi in secondi, non minuti<!-- .element: class="fragment text-justify" data-fragment-index="2" -->
@@ -59,7 +74,7 @@ La società BitMover aveva concesso una licenza gratuita per progetti open sourc
 - Workflow distribuito: Sviluppatori in tutto il mondo senza server centrale<!-- .element: class="fragment text-justify" data-fragment-index="4" -->
 
 <!--v-->
-## **La "Crisi" del Weekend**
+## La "Crisi" del Weekend
 
 **Timeline critica**:
 ```json [1|1-2|1-3|1-4|1-5]
@@ -71,7 +86,7 @@ La società BitMover aveva concesso una licenza gratuita per progetti open sourc
 ```
 <!--v-->
 
-# **Filosofia di Design di Git**
+# Filosofia di Design di Git
 
 Linus aveva requisiti molto specifici:
 
@@ -93,21 +108,6 @@ Linus aveva requisiti molto specifici:
 - Merge intelligente e automatico
 - Supporto per migliaia di branch paralleli
 
-<!--v-->
-## Le Critiche ai Sistemi Esistenti
-
-Linus era particolarmente critico verso:
-
-### CVS/Subversion:
-- "CVS è l'esempio di cosa NON fare"
-- Troppo lento per operazioni su larga scala
-- Merge problematici
-- Modello centralizzato inadeguato
-
-### Altri DVCS(Distributed Version Control System) dell'epoca:
-- **Monotone**: Troppo lento, design over-engineered
-- **Darcs**: Problemi di performance con repository grandi
-- **Bazaar**: Non esisteva ancora in forma utilizzabile
 <!--v-->
 ## Il Fattore Personalità
 
@@ -158,7 +158,7 @@ La creazione di Git fu quindi una **necessità pratica urgente** più che una pa
 - Tracciabilità delle modifiche
 <!--s-->
 
-### Concetti Fondamentali
+### Git - Concetti Fondamentali
 
 #### Concetti Base
 - **Repository**: cartella "intelligente" con cronologia 
@@ -188,10 +188,10 @@ Un git commit è un’istantanea (snapshot) dello stato del progetto in un deter
 
 In pratica:<!-- .element: class="fragment" data-fragment-index="0" -->
 
-- Registra le modifiche apportate ai file nel repository<!-- .element: class="fragment" data-fragment-index="1" -->
-- Include un messaggio descrittivo che spiega cosa è stato cambiato<!-- .element: class="fragment" data-fragment-index="2" -->
-- Diventa parte della cronologia del progetto, permettendo di tornare indietro o confrontare versioni<!-- .element: class="fragment" data-fragment-index="3" -->
-- 💡 In breve: Un commit è come un “salvataggio” ufficiale del progetto nel tempo, con autore, data e descrizione delle modifiche<!-- .element: class="fragment" data-fragment-index="4" -->
+- Registra le modifiche apportate ai file nel repository<!-- .element: class="fragment" data-fragment-index="0" -->
+- Include un messaggio descrittivo che spiega cosa è stato cambiato<!-- .element: class="fragment" data-fragment-index="1" -->
+- Diventa parte della cronologia del progetto, permettendo di tornare indietro o confrontare versioni<!-- .element: class="fragment" data-fragment-index="2" -->
+- 💡 In breve: Un commit è come un “salvataggio” ufficiale del progetto nel tempo, con autore, data e descrizione delle modifiche<!-- .element: class="fragment" data-fragment-index="3" -->
 <!--v-->
 ### Git - Staging Area
 La staging area (o area di preparazione) è una zona intermedia di Git dove vengono raccolte le modifiche prima di confermarle con un commit.
