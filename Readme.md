@@ -596,6 +596,26 @@ git add .gitignore
 git commit -m "Add: gitignore per file sensibili"
 ```
 <!--v-->
+## Documentazione con Git, Sphinx e RST<!-- .slide: class="font-75" -->
+### Documentazione Tecnica: un workflow moderno
+
+**Git – Versionamento della conoscenza**
+- Permette di tracciare l’evoluzione della documentazione come il codice
+- Supporta branching, pull request e code review anche per i documenti
+- Garantisce collaborazione controllata e storico completo
+
+**Sphinx – Generatore di documentazione professionale**
+- Converte file RST in HTML, PDF, ePub e altro
+- Supporta temi, estensioni, API docs auto-generate
+- Ideale per documentare progetti software, procedure e manuali tecnici
+
+**RST (reStructuredText) – Linguaggio semplice e potente**
+- Sintassi leggibile, minimale e altamente estensibile
+- Perfetto per guide, manuali, specifiche tecniche
+- Integrato nativamente con Sphinx
+
+<!--s-->
+
 ## Automazione con GitLab CI/CD (Sessione Avanzata)<!-- .slide: class="font-75" -->
 ### Introduzione alle Pipeline
 **🛠️ HANDS-ON**: Prima pipeline GitLab CI
@@ -667,7 +687,6 @@ deploy_docs:
 - [maven.yml](https://github.com/istitutosuperioredisanita/sigla-main/blob/master/.github/workflows/maven.yml)
 - [release.yml](https://github.com/istitutosuperioredisanita/sigla-main/blob/master/.github/workflows/release.yml)
 <!--s-->
-
 > "Nessun ladro, per quanto scaltro, potrà mai rubarti la conoscenza"
 
 ## Grazie!
